@@ -56,6 +56,7 @@ function destroy(req, res) {
     const index = allPosts.findIndex((item) => item.id === id);
     if (index !== -1) {
         allPosts.splice(index, 1);
+        console.log(allPosts);
         res.sendStatus(204);
     } else {
         res.status(404);
