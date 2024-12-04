@@ -52,7 +52,18 @@ function update(req, res) {
 }
 
 function destroy(req, res) {
-    res.send("Cancellazione del post");
+    const id = parseInt(req.params.id);
+    const index = allPosts.findIndex((item) => item.id === id);
+    if (index !== -1) {
+        allPosts.splice(index, 1);
+        res.sendStatus(204);
+    } else {
+        res.status(404);
+        res.json({
+            error: "404",
+            message: "Post non trovato",
+        });
+    }
 }
 
 module.exports = { index, show, store, update, destroy };
