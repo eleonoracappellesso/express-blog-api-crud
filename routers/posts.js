@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 // importo il file controller
-const { index, show, store, update, destroy } = require("../controllers/postController.js")
+const { index, show, store, update, destroy } = require("../controllers/postController.js");
 
 //Index - Read
 router.get("/", index);

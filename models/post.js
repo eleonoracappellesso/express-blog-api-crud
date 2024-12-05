@@ -34,6 +34,14 @@ const posts = [
         img: "images/torta_paesana.jpeg",
         tags: ["dolce", "tradizionale", "ricetta della nonna", "frutta secca", "torta"]
     }
+
+    // {
+    //     id: 6,
+    //     title: "Polpette di carne",
+    //     content: "Le polpette di carne sono un piatto classico e gustoso, perfette per il pranzo o la cena. Preparato con carne macinata, pane, uova e aromi, sono ideali da servire con un contorno di verdure o con un buon sugo.",
+    //     img: "images/polpette_di_carne.jpeg",
+    //     tags: ["secondo piatto", "carne", "polpette", "ricetta facile", "pranzo"]
+    // }
 ];
 
 module.exports = posts; 

@@ -1,4 +1,4 @@
-const allPosts = require("../models/posts.js");
+const allPosts = require("../models/post.js");
 
 function index(req, res) {
     // dalla query string prendo il tag da filtrare
@@ -44,8 +44,15 @@ function show(req, res) {
 }
 
 function store(req, res) {
-    res.send("Creazione nuovo post");
+    let newId = 0;
+    for (let i = 0; i < allPosts.length; i++) {
+        if (allPosts[i].id > newId) {
+            newId = allPosts[i].id;
+        }
+    }
+    newId += 1;
 }
+
 
 function update(req, res) {
     res.send("Modifica integrale del post");
