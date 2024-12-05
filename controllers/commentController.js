@@ -38,7 +38,7 @@ function show(req, res) {
         res.status(404);
         res.json({
             success: false,
-            message: `Il commento con l'id ${postId} è inesistente`,
+            message: `Il commento con l'id ${commentId} è inesistente`,
         });
     }
 }
