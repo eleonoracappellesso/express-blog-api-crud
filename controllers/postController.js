@@ -51,6 +51,16 @@ function store(req, res) {
         }
     }
     newId += 1;
+    const newPost = {
+        id: newId,
+        title: req.body.title,
+        content: req.body.content,
+        img: req.body.img,
+        tags: req.body.tags
+    };
+
+    allPosts.push(newPost);
+    res.status(201).json(newPost);
 }
 
 

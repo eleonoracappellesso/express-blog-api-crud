@@ -7,6 +7,7 @@ const app = express();
 
 const postsRouter = require("./routers/posts");
 
+app.use(express.json());
 // deifinisco il percorso per gli asset statici
 app.use(express.static("public"));
 
