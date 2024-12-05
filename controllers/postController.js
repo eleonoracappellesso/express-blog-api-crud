@@ -65,7 +65,6 @@ function store(req, res) {
     res.status(201).json(newPost);
 }
 
-
 function update(req, res) {
     const id = parseInt(req.params.id);
     const item = allPosts.find((item) => item.id === id);
@@ -79,6 +78,11 @@ function update(req, res) {
     item.content = req.body.content;
     item.image = req.body.image;
     item.tags = req.body.tags;
+    // for (key in item) {
+    //     if (key !== "id") {
+    //         item[key] = req.body[key];
+    //     }
+    // }
 
     console.log(allPosts);
     res.json(item);

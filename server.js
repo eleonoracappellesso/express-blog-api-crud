@@ -6,6 +6,7 @@ const PORT = 3000;
 const app = express();
 
 const postsRouter = require("./routers/posts");
+const commentsRouter = require("./routers/comments");
 
 app.use(express.json());
 
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 
 // Api root
 app.use("/posts", postsRouter);
+app.use("/comments", commentsRouter);
 
 // Fallback root
 app.all('*', (req, res) => {
