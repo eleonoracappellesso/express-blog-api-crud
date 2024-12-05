@@ -44,6 +44,7 @@ function show(req, res) {
 }
 
 function store(req, res) {
+    // creo l'id per il nuovo post
     let newId = 0;
     for (let i = 0; i < allPosts.length; i++) {
         if (allPosts[i].id > newId) {
@@ -51,6 +52,7 @@ function store(req, res) {
         }
     }
     newId += 1;
+    // creo il nuovo post
     const newPost = {
         id: newId,
         title: req.body.title,
@@ -58,14 +60,28 @@ function store(req, res) {
         img: req.body.img,
         tags: req.body.tags
     };
-
+    // aggiungo il nuovo post al mio array di post
     allPosts.push(newPost);
     res.status(201).json(newPost);
 }
 
 
 function update(req, res) {
-    res.send("Modifica integrale del post");
+    const id = parseInt(req.params.id);
+    const item = allPosts.find((item) => item.id === id);
+    if (!item) {
+        res.status(404).json({ success: false, message: "Il post è inesistente" });
+        return;
+    }
+
+    console.log(req.body);
+    item.title = req.body.title;
+    item.content = req.body.content;
+    item.image = req.body.image;
+    item.tags = req.body.tags;
+
+    console.log(allPosts);
+    res.json(item);
 }
 
 function destroy(req, res) {
