@@ -5,8 +5,10 @@ const port = process.env.PORT || 3000;
 // creo una istanza del server
 const app = express();
 
+// imports
 const postsRouter = require("./routers/posts");
 const commentsRouter = require("./routers/comments");
+const errorsHandler = require("./middlewares/errorsHandler");
 const notFound = require("./middlewares/notFound");
 
 app.use(express.json());
@@ -19,16 +21,12 @@ app.get('/', (req, res) => {
     res.send("Server del mio blog");
 });
 
-// Api root
+// Api root con middlewares
 app.use("/posts", postsRouter);
 app.use("/comments", commentsRouter);
 
-// Fallback root
-app.all('*', (req, res) => {
-    res.status(404).send('<h1>Error 404 - Not Found</h1>');
-});
 
-// global middlewares
+app.use(errorsHandler);
 app.use(notFound);
 
 //metto il server in ascolto su localhost alla porta 3000
