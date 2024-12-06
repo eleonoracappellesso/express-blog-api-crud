@@ -7,6 +7,7 @@ const app = express();
 
 const postsRouter = require("./routers/posts");
 const commentsRouter = require("./routers/comments");
+const notFound = require("./middlewares/notFound");
 
 app.use(express.json());
 
@@ -26,6 +27,9 @@ app.use("/comments", commentsRouter);
 app.all('*', (req, res) => {
     res.status(404).send('<h1>Error 404 - Not Found</h1>');
 });
+
+// global middlewares
+app.use(notFound);
 
 //metto il server in ascolto su localhost alla porta 3000
 app.listen(PORT, () => {

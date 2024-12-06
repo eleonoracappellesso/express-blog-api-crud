@@ -8,14 +8,12 @@ Poi torniamo sul file delle rotte. Qui importiamo le funzioni dichiarate nel con
 Testiamo su postman se chiamando gli endpoint riceviamo effettivamente le stesse risposte che avevamo prima.
 Se tutto funziona, passiamo alla prossima milestone
 
-
 *Milestone 2*
 Per iniziare, creiamo una cartella data o models  in cui creare un file che contenga ed esporti l’array di posts che trovate in allegato.  Importiamo questo file in cima al controller.
 Ora passiamo ad implementare le logiche delle nostre CRUD:
 - Index dovrà restituire la lista dei post in formato JSON
 - Show dovrà restituire un singolo post in formato JSON
 - Destroy dovrà eliminare un singolo post dalla lista, stampare nel terminale (console.log) la lista aggiornata, e rispondere con uno stato 204 e nessun contenuto.
-
 
 ### Bonus
 - Implementare un filtro di ricerca nella index che mostri solo i post che hanno un determinato Tag
@@ -47,3 +45,10 @@ Ripetiamo il procedimento per la rotta di Update, in modo da avere la possibilit
 ### Bonus
 - Quelli del giorno prima, se non già fatti
 - In Update, controllare se il parametro si riferisce ad un post esistente, in caso contrario, rispondere con uno stato 404 e un messaggio d’errore, sempre in formato JSON.
+
+### PARTE 3
+
+### Esercizio
+Dopo aver completato tutte le operazioni CRUD, completiamo le nostre API inserendo un middleware per la gestione delle rotte non registrate e uno per la gestione degli errori.
+- Se viene chiamato un endpoint inesistente, un middleware dovrà rispondere un messaggio e uno status appropriato.
+- Se viene generato un errore, un middleware si occuperà di rispondere con un messaggio e uno status appropriato.
