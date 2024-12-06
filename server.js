@@ -1,7 +1,7 @@
 // importo express 
 const express = require('express');
 // specifico la porta
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 // creo una istanza del server
 const app = express();
 
@@ -32,6 +32,6 @@ app.all('*', (req, res) => {
 app.use(notFound);
 
 //metto il server in ascolto su localhost alla porta 3000
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
