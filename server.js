@@ -10,11 +10,14 @@ const postsRouter = require("./routers/posts");
 const commentsRouter = require("./routers/comments");
 const errorsHandler = require("./middlewares/errorsHandler");
 const notFound = require("./middlewares/notFound");
+const corsPolicy = require("./middlewares/corsPolicy");
 
 app.use(express.json());
 
 // deifinisco il percorso per gli asset statici
 app.use(express.static("public"));
+
+app.use(corsPolicy);
 
 // ROOTS
 app.get('/', (req, res) => {
