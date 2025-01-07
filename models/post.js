@@ -29,7 +29,7 @@ const posts = [
         content: "La pasta alla barbabietola è un primo piatto originale, dove la barbabietola conferisce un colore intenso e un sapore unico alla pasta fresca. Perfetta per chi cerca qualcosa di diverso ma gustoso.",
         image: "img/pasta_barbabietola.jpeg",
         tags: ["salato", "primo piatto"],
-        published: false,
+        published: true,
     },
     {
         id: 5,
