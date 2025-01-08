@@ -8,6 +8,7 @@ const app = express();
 // imports
 const postsRouter = require("./routers/posts");
 const commentsRouter = require("./routers/comments");
+//const tagsRouter = 
 const errorsHandler = require("./middlewares/errorsHandler");
 const notFound = require("./middlewares/notFound");
 const corsPolicy = require("./middlewares/corsPolicy");
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 // Api root con middlewares
 app.use("/posts", postsRouter);
 app.use("/comments", commentsRouter);
+app.use("/tags", tagsRouter)
 
 
 app.use(errorsHandler);
@@ -36,3 +38,4 @@ app.use(notFound);
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
+
