@@ -48,9 +48,9 @@ function show(req, res) {
 function store(req, res) {
     // creo l'id per il nuovo post
     let newId = 0;
-    for (let i = 0; i < allPosts.length; i++) {
-        if (allPosts[i].id > newId) {
-            newId = allPosts[i].id;
+    for (let i = 0; i < allPosts.posts.length; i++) {
+        if (allPosts.posts[i].id > newId) {
+            newId = allPosts.posts[i].id;
         }
     }
     newId += 1;
@@ -60,10 +60,12 @@ function store(req, res) {
         title: req.body.title,
         content: req.body.content,
         img: req.body.img,
-        tags: req.body.tags
+        tags: req.body.tags, // ['a', 'b', ...]
+        published: req.body.published
     };
     // aggiungo il nuovo post al mio array di post
-    allPosts.push(newPost);
+    allPosts.posts.push(newPost);
+    console.log(newPost)
     res.status(201).json(newPost);
 }
 
@@ -92,9 +94,9 @@ function update(req, res) {
 
 function destroy(req, res) {
     const id = parseInt(req.params.id);
-    const index = allPosts.findIndex((item) => item.id === id);
+    const index = allPosts.posts.findIndex((item) => item.id === id);
     if (index !== -1) {
-        allPosts.splice(index, 1);
+        allPosts.posts.splice(index, 1);
         console.log(allPosts);
         res.sendStatus(204);
     } else {

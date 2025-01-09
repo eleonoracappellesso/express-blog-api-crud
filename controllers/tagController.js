@@ -6,7 +6,7 @@ function index(req, res) {
 
     const response = {
         totalCount: data.length,
-        data,
+        tags: data,
     };
     res.json(response);
 }
