@@ -8,7 +8,7 @@ const app = express();
 // imports
 const postsRouter = require("./routers/posts");
 const commentsRouter = require("./routers/comments");
-//const tagsRouter = 
+const tagsRouter = require("./routers/tags");
 const errorsHandler = require("./middlewares/errorsHandler");
 const notFound = require("./middlewares/notFound");
 const corsPolicy = require("./middlewares/corsPolicy");

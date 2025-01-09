@@ -49,4 +49,16 @@ const posts = [
 //     tags: ["secondo piatto", "carne", "polpette", "ricetta facile", "pranzo"]
 // }
 
-module.exports = posts; 
+const tags = [
+    { id: 1, title: "dolce" },
+    { id: 2, title: "dolce tradizionale" },
+    { id: 3, title: "merenda" },
+    { id: 4, title: "snack salato" },
+    { id: 5, title: "vegano" },
+    { id: 6, title: "primo piatto" },
+    { id: 7, title: "carne" },
+    { id: 8, title: "colazione" },
+    { id: 9, title: "aperitivo" },
+    { id: 10, title: "senza glutine" },
+];
+module.exports = { posts, tags }; 
