@@ -1,10 +1,9 @@
-import express from "express";
+const express = require("express");
 const router = express.Router();
 
-import { index } from "../controllers/ingredientsController.js";
-
+const { index } = require("../controllers/tagController.js");
 
 // Index - Read all
 router.get("/", index);
 
-export default router;
+module.exports = router;

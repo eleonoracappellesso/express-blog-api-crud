@@ -61,4 +61,5 @@ const tags = [
     { id: 9, title: "aperitivo" },
     { id: 10, title: "senza glutine" },
 ];
+
 module.exports = { posts, tags }; 

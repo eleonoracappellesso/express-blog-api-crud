@@ -7,7 +7,7 @@ const app = express();
 
 // imports
 const postsRouter = require("./routers/posts");
-const commentsRouter = require("./routers/comments");
+// const commentsRouter = require("./routers/comments");
 const tagsRouter = require("./routers/tags");
 const errorsHandler = require("./middlewares/errorsHandler");
 const notFound = require("./middlewares/notFound");
@@ -15,19 +15,19 @@ const corsPolicy = require("./middlewares/corsPolicy");
 
 app.use(express.json());
 
-// deifinisco il percorso per gli asset statici
+// // deifinisco il percorso per gli asset statici
 app.use(express.static("public"));
 
 app.use(corsPolicy);
 
-// ROOTS
+// // ROOTS
 app.get('/', (req, res) => {
     res.send("Server del mio blog");
 });
 
-// Api root con middlewares
+// // Api root con middlewares
 app.use("/posts", postsRouter);
-app.use("/comments", commentsRouter);
+// app.use("/comments", commentsRouter);
 app.use("/tags", tagsRouter)
 
 

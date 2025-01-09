@@ -1,6 +1,8 @@
-import { tags } from "../models/post.js";
+//import { tags } from "../models/post.js";
+const allPosts = require("../models/post.js");
+
 function index(req, res) {
-    let data = [...tags];
+    let data = [...allPosts.tags];
 
     const response = {
         totalCount: data.length,
@@ -9,4 +11,4 @@ function index(req, res) {
     res.json(response);
 }
 
-export { index };
+module.exports = { index };

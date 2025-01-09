@@ -4,7 +4,7 @@ function index(req, res) {
     // dalla query string prendo il tag da filtrare
     const tagName = req.query.tags;
     // inizializzo postList con tutti i post
-    let postList = [...allPosts];
+    let postList = [...allPosts.posts]; // {posts, tag}
 
     // se è stato specificato un tag, filtro i post in base a quel tag
     if (tagName) {
@@ -17,6 +17,8 @@ function index(req, res) {
             postList = { Errore: `Nessun post contiene il tag ${(req.query.tags).toUpperCase()}` };
         }
     }
+
+
     // restituisco un oggetto json con i post filtrati e il conteggio dei post
     res.json({
         posts: postList,
