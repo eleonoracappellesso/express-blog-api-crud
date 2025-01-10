@@ -30,7 +30,7 @@ function index(req, res) {
 function show(req, res) {
     console.log(req.params);
     const postId = parseInt(req.params.id);
-    const item = allPosts.find((item) => item.id === postId);
+    const item = allPosts.posts.find((item) => item.id === postId);
     if (item) {
         res.json({
             success: true,
